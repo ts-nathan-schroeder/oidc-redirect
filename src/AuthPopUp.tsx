@@ -15,6 +15,7 @@ const AuthPopUp: React.FC = () => {
         });
         let client =  createClientWithoutAuth(TS_URL);
         client.getSystemInformation().then((data: any) => {
+            console.log(data);
             window.opener?.postMessage({ status: "success" }, "*");
             window.close(); // Close the popup
         }).catch((error: any) => {
